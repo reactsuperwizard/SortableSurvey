@@ -1,0 +1,18 @@
+.tw-bs input[type=checkbox] {
+	width:15px !important;
+	height:15px !important;
+}
+.tw-bs input[type=radio]{
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 10px !important;
+}
+.image_preview{
+		
+	overflow: hidden;
+}
+.image_preview img{
+	width:150px;
+	float:left;
+	margin-right:10px;
+}

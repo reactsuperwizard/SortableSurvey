@@ -1,0 +1,39 @@
+.survey_cont{
+			position:relative;
+		}
+		.survey_cont .loader{
+			position:absolute;
+			left: 0px;
+			right: 0px;
+			bottom:0px;
+			top:0px;
+			background: rgba( 255,255,255, 0.5 );
+			z-index: 1000;
+			display: none;
+		}
+		.survey_cont .single_slide{
+			display:none;
+		}
+		.survey_cont .single_slide.active_slide{
+			display:block;
+		}
+		.survey_cont .variant_container .single_variant{
+			border:1px solid #ccc;
+			border-radius:10px;
+			margin-bottom:10px;
+			text-align:center;
+			list-style:none;
+			cursor: move;
+			padding:10px;
+			background:#fff;
+		}
+		.survey_cont .question_title{
+			margin-bottom:10px;
+			border-bottom:1px solid #ccc;
+			text-align:center;
+			padding:10px;
+		}
+		.survey_cont .arrow_holder{
+			    float: left;
+			font-size: 22px;
+		}
