@@ -1,6 +1,6 @@
 <?php 
-if( !class_exists( 'vooMetaBox22' ) ){
-	class vooMetaBox22{
+if( !class_exists( 'rsmMetaBox22' ) ){
+	class rsmMetaBox22{
 		
 		private $metabox_parameters = null;
 		private $fields_parameters = null;

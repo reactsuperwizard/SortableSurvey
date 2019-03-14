@@ -1,6 +1,6 @@
 <?php
-if( !class_exists('vooCPT') ){
-	class vooCPT{
+if( !class_exists('rsmCPT') ){
+	class rsmCPT{
 		
 		var $parameters;
 		var $post_type;
@@ -21,8 +21,8 @@ if( !class_exists('vooCPT') ){
 }
 
 
-if( !class_exists('vooTax') ){
-	class vooTax{
+if( !class_exists('rsmTax') ){
+	class rsmTax{
 		
 		var $parameters;
 		var $post_type;
@@ -78,7 +78,7 @@ $labels = array(
   ); 
 
  
-$new_pt = new vooCPT( $args, 'survey' );
+$new_pt = new rsmCPT( $args, 'survey' );
 
  
 

@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: wp-survey-plugin
-Plugin URI: http://voodoopress.net
-Description: Some description.
-Version: 1.1
-Author: Evgen "EvgenDob" Dobrzhanskiy
-Author URI: http://voodoopress.net
-Stable tag: 1.1
+Plugin URI: http://webexpert1102.wordpress.com
+Description: jQuery Sortable Survey.
+Version: 1.0
+Author: rsm0128 Chengmin Li
+Author URI: http://webexpert1102.wordpress.com
+Stable tag: 1.0
 */
 
 //error_reporting(E_ALL);
@@ -14,8 +14,8 @@ Stable tag: 1.1
 
 
 // core initiation
-if( !class_Exists('vooMainStartSurvey') ){
-	class vooMainStartSurvey{
+if( !class_Exists('rsmMainStartSurvey') ){
+	class rsmMainStartSurvey{
 		var $locale;
 		var $counter;
 		public $survey_array;
@@ -108,7 +108,7 @@ if( !class_Exists('vooMainStartSurvey') ){
 				);
 			}
 			
-			$new_metabox = new vooMetaBox22( $meta_box, $fields_parameters); 
+			$new_metabox = new rsmMetaBox22( $meta_box, $fields_parameters); 
 			
 		}
 		
@@ -219,7 +219,7 @@ if( !class_Exists('vooMainStartSurvey') ){
 
 
 // initiate main class
-new vooMainStartSurvey('wsp', array(
+new rsmMainStartSurvey('wsp', array(
 	'modules/scripts.php',
 	'modules/output.php',
 	'modules/ajax.php',

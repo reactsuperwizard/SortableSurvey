@@ -1,6 +1,6 @@
 <?php 
-if( !class_exists('vooAddStyles') ){
-	class vooAddStyles{
+if( !class_exists('rsmAddStyles') ){
+	class rsmAddStyles{
 		
 		protected $plugin_prefix;
 		protected $plugin_version;
@@ -75,6 +75,6 @@ $scripts_list = array(
 	)
 );
 
-$insert_script = new vooAddStyles( $locale , $scripts_list);
+$insert_script = new rsmAddStyles( $locale , $scripts_list);
 
 ?>
