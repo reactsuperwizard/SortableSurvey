@@ -1,8 +1,23 @@
 jQuery(document).ready( function($){
 	$( ".sortable_survey" ).sortable();
+	$( ".sortable_survey" ).disableSelection();
+	$('#user-info-form').on('submit', function(event) {
+		event.preventDefault();
+		handleNext($('.single_slide.active_slide'));
+	});
 	
 	$('body').on('click', '.survey_cont .next_button', function(){
 		var current_slide = $('.single_slide.active_slide');
+
+		if ( current_slide.hasClass('first_slide') ) {
+			$('<input type="submit">').hide().appendTo('#user-info-form').click().remove();
+			return;
+		}
+
+		handleNext(current_slide);
+	});
+
+	function handleNext(current_slide) {
 		var next_pnt = current_slide.next('.single_slide');
 		
 		$('.active_slide').removeClass('active_slide');
@@ -10,7 +25,6 @@ jQuery(document).ready( function($){
 		
 		// if next exists
 		var next_next = next_pnt.next('.single_slide');
-		console.log( next_next );
 		if( next_next.length == 0 ){
 			//$('.prev_button').attr('disabled', false);
 			$(this).attr('disabled', true);
@@ -25,7 +39,7 @@ jQuery(document).ready( function($){
 			$('.prev_button').attr('disabled', false);
 			 
 		}
-	})
+	}
 	
 	$('body').on('click', '.prev_button', function(){
 		var current_slide = $('.single_slide.active_slide');
@@ -36,7 +50,6 @@ jQuery(document).ready( function($){
 		
 		// if next exists
 		var next_next = next_pnt.prev('.single_slide');
-		console.log( next_next );
 		if( next_next.length == 0 ){
 			$('.next_button').attr('disabled', false);
 			$(this).attr('disabled', true);
@@ -49,22 +62,23 @@ jQuery(document).ready( function($){
 		}
 		$('.survey_cont .submit_block').addClass('d-none');
 		$('.next_button_block').show();
-		console.log( 'click' );
 	})
 	
 	
 	$('body').on('click', '.submit_button', function(){
 		
 		var obj = [];
-		$('.single_slide').each(function(){
+		$('.single_slide.survey_data').each(function(){
 			var answers = [];
 			$('.single_variant', this).each(function(){
 				answers.push( $(this).attr('data-value')  );
 			})
 			obj.push( answers );
 		});
-		console.log( obj );
+
+		var user_data = $('#user-info-form').serialize();
 		var data = {
+			user_data : user_data,
 			results  : obj,
 			action : 'submit_results'
 		}
@@ -76,7 +90,6 @@ jQuery(document).ready( function($){
 					},
 					success: function(msg){
 						
-						console.log( msg );
 						
 						jQuery('.loader').fadeOut();
 						var obj = jQuery.parseJSON( msg );

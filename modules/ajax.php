@@ -12,6 +12,8 @@ function wsp_submit_results(){
 			'post_status' => 'publish'
 		);
 		$id = wp_insert_post( $args );
+		parse_str($_POST['user_data'], $user_data);
+		update_post_meta( $id, 'assessee_user_data', serialize($user_data) );
 		update_post_meta( $id, 'survey_result', serialize( $_POST['results'] ) );
 		$args = array(
 			'ID' => $id,

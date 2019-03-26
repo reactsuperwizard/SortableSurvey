@@ -1,39 +1,73 @@
 .survey_cont{
-			position:relative;
-		}
-		.survey_cont .loader{
-			position:absolute;
-			left: 0px;
-			right: 0px;
-			bottom:0px;
-			top:0px;
-			background: rgba( 255,255,255, 0.5 );
-			z-index: 1000;
-			display: none;
-		}
-		.survey_cont .single_slide{
-			display:none;
-		}
-		.survey_cont .single_slide.active_slide{
-			display:block;
-		}
-		.survey_cont .variant_container .single_variant{
-			border:1px solid #ccc;
-			border-radius:10px;
-			margin-bottom:10px;
-			text-align:center;
-			list-style:none;
-			cursor: move;
-			padding:10px;
-			background:#fff;
-		}
-		.survey_cont .question_title{
-			margin-bottom:10px;
-			border-bottom:1px solid #ccc;
-			text-align:center;
-			padding:10px;
-		}
-		.survey_cont .arrow_holder{
-			    float: left;
-			font-size: 22px;
-		}
+	position:relative;
+	font-family:Lucida Grande,Tahoma,Arial,sans-serif;
+}
+.survey_cont .loader{
+	position:absolute;
+	left: 0px;
+	right: 0px;
+	bottom:0px;
+	top:0px;
+	background: rgba( 255,255,255, 0.5 );
+	z-index: 1000;
+	display: none;
+}
+.survey_cont .single_slide{
+	display:none;
+}
+.survey_cont .single_slide.active_slide{
+	display:block;
+}
+.survey_cont .variant_container .single_variant{
+	border:1px solid #ccc;
+	border-radius:10px;
+	margin-bottom:10px;
+	list-style:none;
+	cursor: move;
+	padding:10px 20px;
+	background:#fff;
+}
+.survey_cont .variant_container .question_title::first-letter{
+	font-size: large;
+}
+.survey_cont .question_title{
+	margin-bottom:10px;
+	border-bottom:1px solid #ccc;
+	padding:10px;
+	font-size: 20px;
+	font-weight: bold;
+}
+.survey_cont .arrow_holder{
+	float: left;
+	font-size: 22px;
+}
+
+.arrow-block {
+	margin-top: 50px;
+	text-align: center;
+}
+.most-like {
+	width: 100%;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+.least-like {
+	bottom: 10px;
+	position: absolute;
+	width: 100%;
+    left: 0;
+}
+
+.like-unlike-arrow {
+	width: 100%;
+	height: 100%;
+    background: url(../img/ud_arrow.png) no-repeat center;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    /*max-width: 150px;*/
+}
