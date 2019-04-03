@@ -21,23 +21,23 @@ class SurveyShortcode{
 						<form id="user-info-form">
 						<div>
 							<label>First Name *</label>
-							<input type="text" name="ufname" value="" required class="user-input">
+							<input type="text" name="ufname" required class="user-input" value="test">
 						</div>
 						<div>
 							<label>Last Name *</label>
-							<input type="text" name="ulname" value="" required class="user-input">
+							<input type="text" name="ulname" required class="user-input" value="test">
 						</div>
 						<div>
 							<label>Title *</label>
-							<input type="text" name="utitle" value="" required class="user-input">
+							<input type="text" name="utitle" required class="user-input" value="test">
 						</div>
 						<div>
 							<label>Email *</label>
-							<input type="email" name="uemail" value="" required class="user-input">
+							<input type="email" name="uemail" required class="user-input" value="test@test.com">
 						</div>
 						<div>
 							<label>Company *</label>
-							<input type="text" name="ucompany" value="" required class="user-input">
+							<input type="text" name="ucompany" required class="user-input" value="test">
 						</div>
 						<input type="hidden" name="sfname" class="text_field" id="" size="25" maxlength="255" value="">
 						<input type="hidden" name="slname" class="text_field" id="" size="25" maxlength="255" value="">

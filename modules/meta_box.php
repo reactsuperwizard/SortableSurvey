@@ -1,5 +1,6 @@
-<?php 
-if( !class_exists( 'rsmSurveyDataMetaBox' ) ){
+<?php
+
+if ( !class_exists( 'rsmSurveyDataMetaBox' ) ){
 	class rsmSurveyDataMetaBox{
 		
 		private $metabox_parameters = null;
@@ -146,9 +147,7 @@ if( !class_exists( 'rsmSurveyDataMetaBox' ) ){
 				switch( $single_field['type'] ){
 					
 					case "text":
-					$current_array = unserialize( get_post_meta( $post->ID, 'assessee_user_data', true ) );
-					var_dump($current_array);
-					// parse_str($assessee_user_data, $current_array);
+					$current_array = get_post_meta( $post->ID, 'assessee_user_data', true );
 					$out .= '<div class="form-group">
 						<label class="control-label" for="input01">'.$single_field['title'].'</label>  
 						 
@@ -189,23 +188,15 @@ if( !class_exists( 'rsmSurveyDataMetaBox' ) ){
 				if ( !current_user_can( 'edit_post', $post_id ) )
 					return;
 			  }
-			  /// User editotions
-			 
-			if( get_post_type($post_id) == $this->metabox_parameters['post_type'] ){
-				$out_arr = array();
-				foreach( $_POST as $k => $v ){
-					if( substr_count( $k, 'survey-' ) > 0 ){
-						$tmp = explode( ',', stripslashes( $v ) );
-						$out_arr[] = $tmp;
-					}
-				}
-				if( count($out_arr) > 0 ){
-					update_post_meta( $post_id, 'survey_result', serialize( $out_arr ) );
-				}
-				
-				 
-			}
 			
+			$out_arr = array();
+			if( get_post_type($post_id) == $this->metabox_parameters['post_type'] ){
+				foreach( $this->fields_parameters as $single_field){
+					$key = $single_field['name'];
+					$out_arr[$key] = $_POST['udata-' . $key];
+				}
+			}
+			update_post_meta( $post_id, 'assessee_user_data', $out_arr );
 		}
 	}
 }
